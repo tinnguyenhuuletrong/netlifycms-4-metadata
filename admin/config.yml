@@ -1,4 +1,5 @@
 backend:
+  # for local host
   # name: git-gateway
   name: github
   repo: tinnguyenhuuletrong/netlifycms-4-metadata
@@ -6,6 +7,8 @@ backend:
 
 media_folder: assets/uploads
 publish_mode: editorial_workflow
+
+# for local host
 # local_backend: true
 
 collections:
