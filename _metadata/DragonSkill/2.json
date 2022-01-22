@@ -1,0 +1,9 @@
+{
+  "id": "2",
+  "name": "D2",
+  "type": "PASSIVE",
+  "image": "/assets/uploads/bot.png",
+  "active_skills": [
+    "1"
+  ]
+}
