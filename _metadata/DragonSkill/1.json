@@ -1,0 +1,11 @@
+{
+  "id": "1",
+  "name": "D1",
+  "type": "ACTIVE",
+  "active_skills": [
+    "1",
+    "2",
+    "4"
+  ],
+  "image": "/assets/uploads/avatar_meta.png"
+}

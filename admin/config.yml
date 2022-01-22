@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+
+media_folder: assets/uploads
+publish_mode: editorial_workflow
+local_backend: true
+
+collections:
+  - label: "DragonSkill"
+    name: "DragonSkill"
+    folder: "_metadata/DragonSkill"
+    create: true
+    identifier_field: id
+    summary: "{{name}}"
+    format: json
+    fields:
+      - {label: "Id", name: "id", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "SkillType", name: "type", widget: "select", options: [ "ACTIVE", "PASSIVE", "ATT_MODIFIER" ]}
+      - label: "Image"
+        name: "image"
+        widget: "image"
+      - label: "ActiveSkill"
+        name: "active_skills"
+        widget: "relation"
+        collection: DragonAttributeModifier
+        search_fields: ["id"]
+        value_field: "id"
+        display_fields: ["{{name}}-{{level}}"]
+        multiple: true
+      
+
+  - label: "DragonAttributeModifier"
+    name: "DragonAttributeModifier"
+    folder: "_metadata/DragonAttributeModifier"
+    create: true
+    identifier_field: id
+    summary: "{{name}}"
+    format: json
+    fields:
+      - {label: "Id", name: "id", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Level", name: "level", widget: "number"}
+      - {label: "Description", name: "description", widget: "string"}
